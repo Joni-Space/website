@@ -364,8 +364,8 @@ export const experiences: ExperienceData[] = [
   },
   {
     title: 'IT Consultant',
-    company: 'IT Consultant',
-    location: 'UC Santa Barbara',
+    company: 'University of California',
+    location: 'Santa Barbara, CA',
     dates: 'Nov 2014 – Jan 2016',
     duration: '1 yr 3 mos',
     type: 'technical',

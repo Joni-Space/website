@@ -1,10 +1,20 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import { animated, useSpring } from '@react-spring/web'
-import { ChevronDown, Users, TrendingUp, Cpu, Rocket } from 'lucide-react'
+import {
+  ChevronDown,
+  Users,
+  TrendingUp,
+  Cpu,
+  Rocket,
+  ExternalLink,
+  Calendar,
+  MapPin,
+} from 'lucide-react'
 import { ExperienceData } from '../types'
 import { getIcon } from '../tech-icons'
+import { companyInfo } from '../company-logos'
 
 const categoryColors = {
   impact: 'from-blue-500/10 to-blue-600/5 border-blue-200',
@@ -26,13 +36,70 @@ interface ExperienceCardProps {
   experience: ExperienceData
   isOpen: boolean
   onToggle: () => void
+  isNested?: boolean
+}
+
+const SubExperienceCard: React.FC<{ experience: ExperienceData }> = ({
+  experience,
+}) => {
+  const info = companyInfo[experience.company] || {}
+
+  return (
+    <div className="mt-4 p-4 bg-gray-50 rounded-lg border border-gray-100">
+      <div className="flex items-start justify-between mb-3">
+        <div>
+          <div className="flex items-center gap-2 mb-1">
+            {info.logo}
+            <h4 className="text-sm font-semibold text-gray-800">
+              {experience.title}
+            </h4>
+          </div>
+          <div className="flex items-center gap-2">
+            <a
+              href={info.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-gray-600 hover:text-gray-900 flex items-center gap-1"
+            >
+              {experience.company}
+              <ExternalLink className="w-3 h-3" />
+            </a>
+            <span className="text-gray-400">•</span>
+            <span className="text-xs text-gray-500">{experience.dates}</span>
+          </div>
+        </div>
+      </div>
+
+      {experience.description && (
+        <p className="text-xs text-gray-600 mb-3 leading-relaxed">
+          {experience.description}
+        </p>
+      )}
+
+      <div className="flex flex-wrap gap-1">
+        {experience.technologies.map((tech, index) => (
+          <span
+            key={index}
+            className="inline-flex items-center gap-1 px-2 py-0.5 bg-white text-gray-600 text-xs rounded border border-gray-200"
+          >
+            {getIcon(tech)}
+            <span>{tech}</span>
+          </span>
+        ))}
+      </div>
+    </div>
+  )
 }
 
 export const ExperienceCard: React.FC<ExperienceCardProps> = ({
   experience,
   isOpen,
   onToggle,
+  isNested = false,
 }) => {
+  const [showSubExperience, setShowSubExperience] = useState(false)
+  const info = companyInfo[experience.company] || {}
+
   const springProps = useSpring({
     transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
     config: { tension: 300, friction: 20 },
@@ -45,7 +112,9 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = ({
   })
 
   return (
-    <div className="group relative border border-gray-100 rounded-xl overflow-hidden hover:border-gray-200 transition-all duration-300 bg-white hover:shadow-lg">
+    <div
+      className={`group relative border border-gray-100 rounded-xl overflow-hidden hover:border-gray-200 transition-all duration-300 bg-white ${!isNested ? 'hover:shadow-lg' : ''}`}
+    >
       <button
         onClick={onToggle}
         className="w-full text-left p-6 focus:outline-none rounded-xl"
@@ -53,6 +122,7 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = ({
         <div className="flex justify-between items-start">
           <div className="flex-1">
             <div className="flex items-center gap-3 mb-1">
+              {info.logo && <span className="text-gray-600">{info.logo}</span>}
               <h3 className="text-base font-semibold text-gray-900">
                 {experience.title}
               </h3>
@@ -67,15 +137,53 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = ({
                 </span>
               )}
               {experience.type === 'startup' && (
-                <span className="px-2 py-0.5 bg-purple-50 text-purple-600 text-xs font-medium rounded-full">
+                <span className="px-2 py-0.5 bg-green-50 text-green-600 text-xs font-medium rounded-full">
                   Startup
                 </span>
               )}
             </div>
-            <p className="text-sm text-gray-600 mb-1">{experience.company}</p>
-            <p className="text-xs text-gray-500">
-              {experience.location} • {experience.dates}
-            </p>
+
+            <div className="flex items-center gap-3 text-sm">
+              <a
+                href={info.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-gray-900 transition-colors flex items-center gap-1"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {experience.company}
+                {info.url && <ExternalLink className="w-3 h-3" />}
+              </a>
+              {experience.subExperience && (
+                <>
+                  <span className="text-gray-400">→</span>
+                  <span className="text-gray-500 text-xs">
+                    Spun out from Protocol Labs
+                  </span>
+                </>
+              )}
+            </div>
+
+            <div className="flex items-center gap-2 mt-1 text-xs text-gray-500">
+              <Calendar className="w-3 h-3" />
+              <span>{experience.dates}</span>
+              {experience.duration && (
+                <>
+                  <span className="text-gray-400">•</span>
+                  <span>{experience.duration}</span>
+                </>
+              )}
+              <span className="text-gray-400">•</span>
+              <MapPin className="w-3 h-3" />
+              <span>{experience.location}</span>
+            </div>
+
+            {/* Collapsed View: Description */}
+            {!isOpen && experience.description && (
+              <p className="mt-3 text-sm text-gray-600 line-clamp-2">
+                {experience.description}
+              </p>
+            )}
 
             {/* Collapsed View: Tech Stack Pills */}
             {!isOpen && (
@@ -106,7 +214,9 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = ({
                     <span className="text-xs font-medium text-gray-900">
                       {metric.value}
                     </span>
-                    <span className="text-xs text-gray-500">{metric.label}</span>
+                    <span className="text-xs text-gray-500">
+                      {metric.label}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -126,6 +236,18 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = ({
       <animated.div style={contentSpring} className="overflow-hidden">
         {isOpen && (
           <div className="px-6 pb-6 space-y-4">
+            {/* Full Description */}
+            {experience.description && (
+              <p className="text-sm text-gray-600 leading-relaxed">
+                {experience.description}
+              </p>
+            )}
+
+            {/* Sub-Experience (Protocol Labs under Medusa) */}
+            {experience.subExperience && (
+              <SubExperienceCard experience={experience.subExperience} />
+            )}
+
             {/* Metrics Dashboard */}
             {experience.metrics && experience.metrics.length > 0 && (
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -140,7 +262,9 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = ({
                         {metric.value}
                       </span>
                     </div>
-                    <span className="text-xs text-gray-500">{metric.label}</span>
+                    <span className="text-xs text-gray-500">
+                      {metric.label}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -151,7 +275,7 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = ({
               {['impact', 'technical', 'innovation', 'scale', 'leadership'].map(
                 (category) => {
                   const items = experience.achievements.filter(
-                    (a) => a.category === category
+                    (a) => a.category === category,
                   )
                   if (items.length === 0) return null
                   return (
@@ -163,7 +287,11 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = ({
                     >
                       <div className="flex items-center gap-2 mb-2">
                         <span className="text-gray-600">
-                          {categoryIcons[category as keyof typeof categoryIcons]}
+                          {
+                            categoryIcons[
+                              category as keyof typeof categoryIcons
+                            ]
+                          }
                         </span>
                         <span className="text-xs font-semibold text-gray-700 uppercase tracking-wider">
                           {category}
@@ -181,7 +309,7 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = ({
                       </ul>
                     </div>
                   )
-                }
+                },
               )}
             </div>
 
@@ -202,6 +330,25 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = ({
                 ))}
               </div>
             </div>
+
+            {/* Skills from LinkedIn */}
+            {experience.skills && experience.skills.length > 0 && (
+              <div>
+                <h4 className="text-xs font-semibold text-gray-600 uppercase tracking-wider mb-2">
+                  Key Skills
+                </h4>
+                <div className="flex flex-wrap gap-1.5">
+                  {experience.skills.map((skill, index) => (
+                    <span
+                      key={index}
+                      className="px-2.5 py-1 bg-gray-100 text-gray-700 text-xs rounded-md"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         )}
       </animated.div>

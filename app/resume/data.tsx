@@ -24,10 +24,10 @@ export const experiences: ExperienceData[] = [
       'The Converted is on a mission to conquer enterprise tech lead generation through our pioneering approach we call "Humanized-AI".',
     metrics: [
       { label: 'Team Size', value: '5', icon: <Users className="w-3 h-3" /> },
-      { label: 'AI Models', value: '3', icon: <Brain className="w-3 h-3" /> },
+      { label: 'Clients', value: '10', icon: <Brain className="w-3 h-3" /> },
       {
-        label: 'Data Pipeline',
-        value: 'Real-time',
+        label: 'ARR',
+        value: '$500k+',
         icon: <Zap className="w-3 h-3" />,
       },
     ],
@@ -45,15 +45,15 @@ export const experiences: ExperienceData[] = [
       },
       {
         category: 'technical',
-        text: 'Built MCP-powered CRM superpowers enabling lean consulting operations',
+        text: 'Built MCP-powered CRM capabilities enabling lean sales operations',
       },
       {
         category: 'impact',
-        text: 'Maximized conversion rates through AI-driven prospect priority search',
+        text: 'Maximized conversion rates through AI-driven LinkedIn SalesNav priority search',
       },
       {
         category: 'scale',
-        text: 'Designed ethical data pipelines positioned for rapid AI innovation scale',
+        text: 'Grew from 0 to 10 clients, 5 employees, and $500k+ ARR in 6 months',
       },
     ],
   },
@@ -106,7 +106,7 @@ export const experiences: ExperienceData[] = [
       },
       {
         category: 'technical',
-        text: 'Developed EVM contracts for ZK Coprocessor with AI-like optimizations',
+        text: 'Developed EVM contracts for ZK Coprocessor with novel optimizations to facilitate gas savings and superior UX',
       },
       {
         category: 'impact',
@@ -114,7 +114,7 @@ export const experiences: ExperienceData[] = [
       },
       {
         category: 'innovation',
-        text: 'Implemented Rust distributed system for proof workload planning and assignment to 3rd-party provers',
+        text: 'Implemented Rust distributed system with cryptoeconomics for proof workload planning and assignment to 3rd-party provers',
       },
     ],
   },
@@ -129,11 +129,15 @@ export const experiences: ExperienceData[] = [
       'Co-created and developed the Medusa network, a decryption oracle network for managing private data via smart contracts.',
     metrics: [
       {
-        label: 'Teams Attracted',
+        label: 'App Dev Teams',
         value: '10+',
         icon: <Users className="w-3 h-3" />,
       },
-      { label: 'Chains', value: '2', icon: <Layers className="w-3 h-3" /> },
+      {
+        label: 'Deployed on Chains',
+        value: '2',
+        icon: <Layers className="w-3 h-3" />,
+      },
     ],
     technologies: [
       'Solidity',
@@ -158,15 +162,15 @@ export const experiences: ExperienceData[] = [
       },
       {
         category: 'impact',
-        text: 'Attracted 10+ teams to adopt the platform',
+        text: 'Attracted 10+ teams to leverage Medusa in their applications',
       },
       {
         category: 'technical',
-        text: 'Engineered fullstack: Solidity contracts, TypeScript SDK, Rust libp2p networking',
+        text: 'Engineered fullstack: Solidity contracts, TypeScript SDK, Rust libp2p networking, Kubernetes infra',
       },
       {
         category: 'innovation',
-        text: 'Built protocols for AI-enhanced data privacy in blockchain',
+        text: 'Built threshold encryption protocols for onchain programmatic access control',
       },
     ],
     // Nested experience showing Protocol Labs role that led to Medusa spinout
@@ -246,7 +250,7 @@ export const experiences: ExperienceData[] = [
       },
       {
         category: 'impact',
-        text: 'Built Next.js eCommerce with AI personalization features',
+        text: 'Built Next.js eCommerce with token-based loyalty features',
       },
     ],
   },
@@ -257,8 +261,14 @@ export const experiences: ExperienceData[] = [
     dates: 'Jun 2017 – Mar 2021',
     duration: '2 yrs 2 mos (intermittent)',
     type: 'leadership',
-    description:
-      'Led product team to unlock new customer base and revenue streams. Developed distributed infrastructure to improve user experience (real-time analytics, events, authentication).',
+    description: (
+      <>
+        Led product team to unlock new customer base and revenue streams.
+        <br />
+        Developed distributed infrastructure to unlock new product capabilities,
+        devops, and scale the organization of 100+ engineers.
+      </>
+    ),
     metrics: [
       { label: 'Team Size', value: '8', icon: <Users className="w-3 h-3" /> },
       {
@@ -281,11 +291,11 @@ export const experiences: ExperienceData[] = [
     achievements: [
       {
         category: 'leadership',
-        text: 'Led team of 8 engineers for new SaaS product launch',
+        text: 'Buit and led cross-functional team of 8 for new SaaS product launch',
       },
       {
         category: 'scale',
-        text: 'Scaled platform to serve 20k+ customers with new revenue streams',
+        text: 'Scaled new product to serve 20k+ customers with new revenue streams',
       },
       {
         category: 'technical',
@@ -317,11 +327,11 @@ export const experiences: ExperienceData[] = [
       },
       {
         category: 'technical',
-        text: 'Streamed Wikipedia data to boost F1 score with AI fine-tuning',
+        text: 'Streamed Wikipedia data to boost F1 score with real-time data',
       },
       {
         category: 'innovation',
-        text: 'Built metrics service and CMS for knowledge graph enhancing NLP',
+        text: 'Built metrics service to monitor ETL jobs and CMS for knowledge graph data fixes',
       },
     ],
   },

@@ -7,7 +7,7 @@ export interface ExperienceData {
   dates: string
   duration?: string
   type?: 'leadership' | 'technical' | 'startup' | 'founder'
-  description?: string
+  description?: string | React.ReactNode
   metrics?: {
     label: string
     value: string

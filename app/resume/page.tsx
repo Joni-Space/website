@@ -1,11 +1,11 @@
 'use client'
 
 import { useState } from 'react'
-import { Header } from './components/Header'
-import { ExperienceCard } from './components/ExperienceCard'
 import { EducationCard } from './components/EducationCard'
+import { ExperienceCard } from './components/ExperienceCard'
+import { Header } from './components/Header'
 import { SkillCategory } from './components/SkillCategory'
-import { experiences, skills, education } from './data'
+import { education, experiences, skills } from './data'
 
 export default function ResumePage() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)

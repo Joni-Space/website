@@ -1,22 +1,25 @@
 'use client'
 
-import React, { useState } from 'react'
 import { animated, useSpring } from '@react-spring/web'
 import {
-  ChevronDown,
-  Users,
-  TrendingUp,
-  Cpu,
-  Rocket,
-  ExternalLink,
   Calendar,
+  ChevronDown,
+  Cpu,
+  ExternalLink,
   MapPin,
+  Rocket,
+  TrendingUp,
+  Users,
 } from 'lucide-react'
-import { ExperienceData } from '../types'
+import React from 'react'
+import type { IconBaseProps } from 'react-icons'
+import {
+  CompanyLogo,
+  type CompanyLogoProps,
+  companyInfo,
+} from '../company-logos'
 import { getIcon } from '../tech-icons'
-import { companyInfo, CompanyLogo, CompanyLogoProps } from '../company-logos'
-import Image from 'next/image'
-import { IconBaseProps } from 'react-icons'
+import type { ExperienceData } from '../types'
 
 const categoryColors = {
   impact: 'from-blue-500/10 to-blue-600/5 border-blue-200',

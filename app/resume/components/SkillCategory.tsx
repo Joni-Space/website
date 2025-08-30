@@ -1,5 +1,5 @@
-import React from 'react'
-import { Skill } from '../types'
+import type React from 'react'
+import type { Skill } from '../types'
 
 interface SkillCategoryProps extends Skill {}
 

@@ -1,16 +1,15 @@
-import React from 'react'
-import { ExperienceData, Skill, Education } from './types'
 import {
-  Users,
   Brain,
-  Zap,
-  Shield,
-  GitBranch,
-  TrendingUp,
   Database,
-  Layers,
   DollarSign,
+  GitBranch,
+  Layers,
+  Shield,
+  TrendingUp,
+  Users,
+  Zap,
 } from 'lucide-react'
+import type { Education, ExperienceData, Skill } from './types'
 
 export const experiences: ExperienceData[] = [
   {

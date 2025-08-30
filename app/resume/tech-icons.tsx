@@ -1,29 +1,29 @@
-import React from 'react'
-import {
-  SiTypescript,
-  SiPython,
-  SiRust,
-  SiKubernetes,
-  SiTerraform,
-  SiElasticsearch,
-  SiKibana,
-  SiRubyonrails,
-  SiPostgresql,
-  SiReact,
-  SiNextdotjs,
-  SiMysql,
-  SiLinkedin,
-  SiDocker,
-  SiEthereum,
-  SiPytorch,
-  SiSolidity,
-  SiAmazonwebservices,
-  SiHubspot,
-  SiAnthropic,
-  SiIpfs,
-} from 'react-icons/si'
-import { Brain, Database, Cloud, Cpu, Layers, Code2 } from 'lucide-react'
+import { Brain, Cloud, Code2, Cpu, Database, Layers } from 'lucide-react'
+import type React from 'react'
 import { AiFillRobot } from 'react-icons/ai'
+import {
+  SiAmazonwebservices,
+  SiAnthropic,
+  SiDocker,
+  SiElasticsearch,
+  SiEthereum,
+  SiHubspot,
+  SiIpfs,
+  SiKibana,
+  SiKubernetes,
+  SiLinkedin,
+  SiMysql,
+  SiNextdotjs,
+  SiPostgresql,
+  SiPython,
+  SiPytorch,
+  SiReact,
+  SiRubyonrails,
+  SiRust,
+  SiSolidity,
+  SiTerraform,
+  SiTypescript,
+} from 'react-icons/si'
 
 const iconClass = 'w-3 h-3'
 

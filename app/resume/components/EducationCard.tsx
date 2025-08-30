@@ -1,5 +1,5 @@
-import React from 'react'
-import { Education } from '../types'
+import type React from 'react'
+import type { Education } from '../types'
 
 interface EducationCardProps extends Education {}
 

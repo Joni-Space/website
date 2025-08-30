@@ -1,8 +1,8 @@
-import React from 'react'
-import Image from 'next/image'
-import { SiAmazon } from 'react-icons/si'
 import { Building2, Code2 } from 'lucide-react'
-import { IconBaseProps } from 'react-icons'
+import Image from 'next/image'
+import type React from 'react'
+import type { IconBaseProps } from 'react-icons'
+import { SiAmazon } from 'react-icons/si'
 
 // Company logo component wrapper - responsive sizing
 export interface CompanyLogoProps {

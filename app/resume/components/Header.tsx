@@ -1,7 +1,8 @@
 'use client'
 
-import React, { useState } from 'react'
-import { Mail, Github, Linkedin, Check, Copy } from 'lucide-react'
+import { Check, Copy, Github, Linkedin, Mail } from 'lucide-react'
+import type React from 'react'
+import { useState } from 'react'
 import { BiCopy } from 'react-icons/bi'
 
 export const Header: React.FC = () => {

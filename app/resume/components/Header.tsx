@@ -1,9 +1,11 @@
 'use client'
 
-import { Check, Copy, Github, Linkedin, Mail } from 'lucide-react'
+import { Check, Copy, Mail } from 'lucide-react'
 import type React from 'react'
 import { useState } from 'react'
 import { BiCopy } from 'react-icons/bi'
+import { FaRegFileAlt } from 'react-icons/fa'
+import { SiGithub, SiLinkedin } from 'react-icons/si'
 
 export const Header: React.FC = () => {
   const [copiedEmail, setCopiedEmail] = useState(false)
@@ -21,7 +23,6 @@ export const Header: React.FC = () => {
         Jonathan Easterman
       </h1>
 
-      {/* Desktop view - full text links */}
       <div className="hidden sm:flex mt-6 justify-center items-center space-x-6 text-sm">
         <a
           href={`mailto:${email}`}
@@ -30,13 +31,26 @@ export const Header: React.FC = () => {
           <Mail className="w-4 h-4 mr-2" />
           <span>{email}</span>
         </a>
+
+        <a
+          href="https://joni.space/resume"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center text-gray-600 hover:text-gray-900 transition-colors duration-200"
+        >
+          <FaRegFileAlt className="w-4 h-4 mr-2" />
+          <span>joni.space/resume</span>
+        </a>
+      </div>
+      {/* Desktop view - full text links */}
+      <div className="hidden sm:flex mt-6 justify-center items-center space-x-6 text-sm">
         <a
           href="https://github.com/jaeaster"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center text-gray-600 hover:text-gray-900 transition-colors duration-200"
         >
-          <Github className="w-4 h-4 mr-2" />
+          <SiGithub className="w-4 h-4 mr-2" />
           <span>github.com/jaeaster</span>
         </a>
         <a
@@ -45,7 +59,7 @@ export const Header: React.FC = () => {
           rel="noopener noreferrer"
           className="flex items-center text-gray-600 hover:text-gray-900 transition-colors duration-200"
         >
-          <Linkedin className="w-4 h-4 mr-2" />
+          <SiLinkedin className="w-4 h-4 mr-2" />
           <span>linkedin.com/in/jonathan-easterman</span>
         </a>
       </div>
@@ -61,7 +75,7 @@ export const Header: React.FC = () => {
             className="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-all duration-200"
             aria-label="GitHub"
           >
-            <Github className="w-5 h-5" />
+            <SiGithub className="w-5 h-5" />
           </a>
           <a
             href="https://linkedin.com/in/jonathan-easterman"
@@ -70,7 +84,7 @@ export const Header: React.FC = () => {
             className="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-all duration-200"
             aria-label="LinkedIn"
           >
-            <Linkedin className="w-5 h-5" />
+            <SiLinkedin className="w-5 h-5" />
           </a>
         </div>
 

@@ -2,22 +2,45 @@ import React from 'react'
 import Image from 'next/image'
 import { SiAmazon } from 'react-icons/si'
 import { Building2, Code2 } from 'lucide-react'
+import { IconBaseProps } from 'react-icons'
 
-// Company logo component wrapper
-const CompanyLogo: React.FC<{
+// Company logo component wrapper - responsive sizing
+export interface CompanyLogoProps {
   src?: string
   alt: string
   fallback?: React.ReactNode
-}> = ({ src, alt, fallback = <Building2 className="w-5 h-5" /> }) => {
+  size?: 'sm' | 'md' | 'lg'
+}
+
+export const CompanyLogo: React.FC<CompanyLogoProps> = ({
+  src,
+  alt,
+  fallback = <Building2 className="w-5 h-5" />,
+  size = 'sm',
+}) => {
   if (!src) return <>{fallback}</>
 
+  const sizeClasses = {
+    sm: 'w-5 h-5',
+    md: 'w-8 h-8',
+    lg: 'w-10 h-10',
+  }
+
+  const dimensions = {
+    sm: 20,
+    md: 32,
+    lg: 40,
+  }
+
   return (
-    <div className="relative w-5 h-5 flex items-center justify-center">
+    <div
+      className={`relative ${sizeClasses[size]} flex items-center justify-center`}
+    >
       <Image
         src={src}
         alt={alt}
-        width={20}
-        height={20}
+        width={dimensions[size]}
+        height={dimensions[size]}
         className="object-contain"
       />
     </div>
@@ -26,7 +49,12 @@ const CompanyLogo: React.FC<{
 
 // Company logos and URLs mapping
 export const companyInfo: {
-  [key: string]: { logo?: React.ReactNode; url?: string }
+  [key: string]: {
+    logo:
+      | React.ReactElement<CompanyLogoProps>
+      | React.ReactElement<IconBaseProps>
+    url: string
+  }
 } = {
   'The Converted': {
     url: 'https://theconverted.io',

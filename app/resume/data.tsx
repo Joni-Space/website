@@ -21,7 +21,7 @@ export const experiences: ExperienceData[] = [
     duration: '8 mos',
     type: 'founder',
     description:
-      'The Converted is on a mission to conquer enterprise tech lead generation through our pioneering approach we call "Humanized-AI".',
+      'The Converted is conquering enterprise tech lead generation through our innovative "Humanized-AI" approach to sales. We grew from 0 to 10 clients, 5 employees, and $500k+ ARR in 6 months.',
     metrics: [
       { label: 'Team Size', value: '5', icon: <Users className="w-3 h-3" /> },
       { label: 'Clients', value: '10', icon: <Brain className="w-3 h-3" /> },
@@ -65,7 +65,7 @@ export const experiences: ExperienceData[] = [
     duration: '9 mos',
     type: 'startup',
     description:
-      "Design and develop EVM smart contracts for Lagrange's ZK Coprocessor, securing $10B+ ETH and serving 500k+ transactions.",
+      "Designed and developed EVM smart contracts for Lagrange's ZK Coprocessor, securing $10B+ ETH and serving 500k+ transactions.",
     metrics: [
       {
         label: 'Value Secured',
@@ -213,7 +213,8 @@ export const experiences: ExperienceData[] = [
     location: 'Remote',
     dates: 'Mar 2021 – Present',
     type: 'technical',
-    description: 'Fullstack Dapp Development and ETL for Ethereum Ecosystem',
+    description:
+      'Fullstack Dapp Development and ETL for the Ethereum Ecosystem.',
     metrics: [
       { label: 'DAU', value: '100k+', icon: <Users className="w-3 h-3" /> },
       {

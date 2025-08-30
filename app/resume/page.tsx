@@ -12,12 +12,12 @@ export default function ResumePage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-12">
+        <div className="bg-white rounded-xl sm:rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
           <Header />
 
           {/* Main Content - Reorganized Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 p-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 p-4 sm:p-8">
             {/* Left Column: Experience */}
             <div className="lg:col-span-2 space-y-8">
               <div>
@@ -47,11 +47,13 @@ export default function ResumePage() {
                   Professional Summary
                 </h2>
                 <p className="text-sm text-gray-600 leading-relaxed">
-                  Product engineer and leader with 8+ years in distributed
-                  systems, AI experimentation, and blockchain. Expert in rapid
-                  domain adaptation, building scalable solutions, and driving
-                  impact in fast-paced environments. Seeking to innovate in AI
-                  enterprises with strong communication and technical prowess.
+                  Product leader and engineer with 9+ years in distributed
+                  systems, SaaS, blockchain, and AI ETL. Expert in adapting to
+                  new business and technical domains while building scalable
+                  products and driving impact in fast-paced environments.
+                  Seeking to innovate in AI enterprises with strong
+                  communication, technical prowess, and vision to build the
+                  future.
                 </p>
               </div>
 

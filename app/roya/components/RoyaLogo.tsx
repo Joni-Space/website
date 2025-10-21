@@ -1,5 +1,7 @@
 'use client'
 
+import { Eye } from 'lucide-react'
+
 type FontOption = 'space-grotesk' | 'sora' | 'outfit' | 'dm-sans'
 
 interface RoyaLogoProps {
@@ -14,29 +16,92 @@ const sizeClasses = {
   xl: 'text-9xl',
 }
 
-export function RoyaLogo({ font = 'space-grotesk', size = 'lg' }: RoyaLogoProps) {
-  const fontClass = `font-${font}`
+const fontFamilies = {
+  'space-grotesk': 'var(--font-space-grotesk)',
+  sora: 'var(--font-sora)',
+  outfit: 'var(--font-outfit)',
+  'dm-sans': 'var(--font-dm-sans)',
+}
 
+export function RoyaLogo({
+  font = 'space-grotesk',
+  size = 'lg',
+}: RoyaLogoProps) {
   return (
-    <div className={`${fontClass} ${sizeClasses[size]} font-bold tracking-tight flex items-center justify-center`}>
-      <span className="text-black">R</span>
+    <div
+      className={`${sizeClasses[size]} font-bold tracking-wide flex items-center justify-center relative`}
+      style={{
+        fontFamily: fontFamilies[font],
+        color: '#D4AF37', // Gold color
+        textShadow: `
+          0 2px 4px rgba(0,0,0,0.5),
+          0 4px 8px rgba(0,0,0,0.3),
+          0 -1px 1px rgba(255,255,255,0.3),
+          0 1px 2px rgba(212,175,55,0.5)
+        `,
+        WebkitTextStroke: '1px rgba(255,255,255,0.1)',
+      }}
+    >
+      <span
+        style={{
+          background:
+            'linear-gradient(180deg, #F4E4C1 0%, #D4AF37 50%, #B8941F 100%)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))',
+        }}
+      >
+        R
+      </span>
       <div className="relative inline-block mx-1">
-        {/* Evil Eye "O" */}
-        <div className="relative w-[0.8em] h-[0.8em] inline-flex items-center justify-center">
-          {/* Outer eye shape */}
-          <div className="absolute inset-0 bg-white rounded-full shadow-lg shadow-sunset-orange/30" />
-
-          {/* Iris with gradient */}
-          <div className="absolute inset-[20%] rounded-full bg-gradient-to-br from-sky-400 to-blue-600" />
-
-          {/* Pupil */}
-          <div className="absolute inset-[40%] rounded-full bg-black" />
-
-          {/* Highlight/reflection */}
-          <div className="absolute top-[30%] left-[35%] w-[20%] h-[20%] rounded-full bg-white/60" />
-        </div>
+        {/* "O" with custom eye icon inside */}
+        <span
+          className="relative"
+          style={{
+            background:
+              'linear-gradient(180deg, #F4E4C1 0%, #D4AF37 50%, #B8941F 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))',
+          }}
+        >
+          o{/* Simple line-art eye inside O */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <svg
+              width="35%"
+              height="35%"
+              viewBox="0 0 24 24"
+              fill="none"
+              className="text-sunset-orange"
+              style={{ filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.3))' }}
+            >
+              {/* Almond-shaped eye outline */}
+              <ellipse
+                cx="12"
+                cy="12"
+                rx="8"
+                ry="5"
+                stroke="currentColor"
+                strokeWidth="2"
+                fill="none"
+              />
+              {/* Pupil */}
+              <circle cx="12" cy="12" r="3" fill="currentColor" />
+            </svg>
+          </div>
+        </span>
       </div>
-      <span className="text-black">ya</span>
+      <span
+        style={{
+          background:
+            'linear-gradient(180deg, #F4E4C1 0%, #D4AF37 50%, #B8941F 100%)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))',
+        }}
+      >
+        ya
+      </span>
     </div>
   )
 }

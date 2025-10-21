@@ -13,12 +13,16 @@
   /* Text Colors */
   --color-text-primary: #ffffff;
   --color-text-secondary: #a3a3a3;
+}
 
-  /* Custom Fonts */
-  --font-family-space-grotesk: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
-  --font-family-sora: "Sora", ui-sans-serif, system-ui, sans-serif;
-  --font-family-outfit: "Outfit", ui-sans-serif, system-ui, sans-serif;
-  --font-family-dm-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+/* Font Face Declarations */
+@supports (font-variation-settings: normal) {
+  :root {
+    --font-space-grotesk: var(--font-space-grotesk);
+    --font-sora: var(--font-sora);
+    --font-outfit: var(--font-outfit);
+    --font-dm-sans: var(--font-dm-sans);
+  }
 }
 
 /* Roya Page Specific Styles */

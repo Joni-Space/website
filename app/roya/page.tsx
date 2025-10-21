@@ -16,9 +16,13 @@ export default function RoyaPage() {
 
         {/* Content */}
         <div className="relative z-10 w-full max-w-md mx-auto text-center">
-          {/* Main Logo */}
-          <div className="mb-12">
-            <RoyaLogo font="space-grotesk" size="xl" />
+          {/* Main Logo with background */}
+          <div className="mb-12 relative">
+            {/* Background panel for logo contrast */}
+            <div className="absolute inset-0 -m-8 rounded-3xl bg-gradient-to-br from-bg-surface/80 via-bg-surface/60 to-bg-primary/40 backdrop-blur-md border border-white/5 shadow-2xl" />
+            <div className="relative py-8">
+              <RoyaLogo font="space-grotesk" size="xl" />
+            </div>
           </div>
 
           {/* Social Links - Linktree Style */}

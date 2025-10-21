@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  /* Sunset Color Palette */
+  --color-sunset-orange: #FF6B35;
+  --color-sunset-red: #E63946;
+  --color-sunset-yellow: #FFB703;
+
+  /* Background Colors */
+  --color-bg-primary: #0a0a0a;
+  --color-bg-surface: #1a1a1a;
+
+  /* Text Colors */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a3a3a3;
+
+  /* Custom Fonts */
+  --font-family-space-grotesk: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-family-sora: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-family-outfit: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-family-dm-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Roya Page Specific Styles */
+.roya-page {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  min-height: 100vh;
+}
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Gradient utilities */
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--tw-gradient-stops));
+}
+
+/* Custom scrollbar */
+.roya-page::-webkit-scrollbar {
+  width: 8px;
+}
+
+.roya-page::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+
+.roya-page::-webkit-scrollbar-thumb {
+  background: var(--color-sunset-orange);
+  border-radius: 4px;
+}
+
+.roya-page::-webkit-scrollbar-thumb:hover {
+  background: var(--color-sunset-red);
+}

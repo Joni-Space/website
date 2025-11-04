@@ -28,16 +28,24 @@ export function ProfileHeader() {
             <AvatarFallback className="text-2xl font-bold">R</AvatarFallback>
           </Avatar>
           {/* Username and verification below profile picture */}
-          <div className="mt-3 flex items-center justify-center gap-1.5">
+          <div className="mt-3 flex flex-col items-start gap-1">
+            <div className="flex items-center gap-1.5">
+              <a
+                className="text-sm text-text-secondary hover:underline hover:text-white transition-colors"
+                href="https://instagram.com/theofficialroya"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                @theofficialroya
+              </a>
+              <BadgeCheck className="w-4 h-4 fill-blue-500 text-black" />
+            </div>
             <a
-              className="text-sm text-text-secondary hover:underline"
-              href="https://instagram.com/theofficialroya"
-              target="_blank"
-              rel="noopener noreferrer"
+              className="text-sm text-text-secondary hover:underline hover:text-white transition-colors"
+              href="mailto:roya.mgmt@joni.space"
             >
-              @theofficialroya
+              roya.mgmt@joni.space
             </a>
-            <BadgeCheck className="w-4 h-4 fill-blue-500 text-black" />
           </div>
         </div>
 

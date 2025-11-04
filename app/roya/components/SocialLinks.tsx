@@ -54,14 +54,18 @@ export function SunsetOrbsSocialLinks() {
   const isOddNumber = socialLinks.length % 2 !== 0
 
   return (
-    <div className="grid grid-cols-2 gap-x-8 gap-y-20 py-8 px-4 place-items-center max-w-md mx-auto">
+    <div className="grid grid-cols-2 gap-x-8 gap-y-20 py-8 px-4 max-w-md mx-auto">
       {socialLinks.map((link, index) => {
         const isLastItem = isOddNumber && index === socialLinks.length - 1
 
         return (
           <div
             key={link.name}
-            className={isLastItem ? 'col-span-2 flex justify-center' : ''}
+            className={
+              isLastItem
+                ? 'col-span-2 flex justify-center'
+                : 'flex justify-center'
+            }
           >
             <a
               href={link.url}

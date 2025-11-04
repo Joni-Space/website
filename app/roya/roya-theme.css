@@ -32,6 +32,12 @@
   min-height: 100vh;
 }
 
+/* Ensure html and body have dark background for iOS Safari overflow */
+html:has(.roya-page),
+body:has(.roya-page) {
+  background-color: #0a0a0a;
+}
+
 /* Animations */
 @keyframes pulse {
   0%, 100% {

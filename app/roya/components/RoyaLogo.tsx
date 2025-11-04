@@ -54,7 +54,7 @@ export function RoyaLogo({
         R
       </span>
       <div className="relative inline-block mx-1">
-        {/* "O" with custom eye icon inside */}
+        {/* "o" with eye icon inside */}
         <span
           className="relative"
           style={{
@@ -65,28 +65,24 @@ export function RoyaLogo({
             filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))',
           }}
         >
-          o{/* Simple line-art eye inside O */}
+          o
           <div className="absolute inset-0 flex items-center justify-center">
-            <svg
-              width="35%"
-              height="35%"
-              viewBox="0 0 24 24"
-              fill="none"
-              className="text-sunset-orange"
-              style={{ filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.3))' }}
-            >
-              {/* Almond-shaped eye outline */}
-              <ellipse
-                cx="12"
-                cy="12"
-                rx="8"
-                ry="5"
-                stroke="currentColor"
-                strokeWidth="2"
-                fill="none"
-              />
-              {/* Pupil */}
-              <circle cx="12" cy="12" r="3" fill="currentColor" />
+            <Eye
+              className="w-[0.35em] h-[0.35em]"
+              strokeWidth={2.5}
+              style={{
+                stroke: 'url(#goldGradient)',
+                filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.3))',
+              }}
+            />
+            <svg width="0" height="0" style={{ position: 'absolute' }}>
+              <defs>
+                <linearGradient id="goldGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor="#F4E4C1" />
+                  <stop offset="50%" stopColor="#D4AF37" />
+                  <stop offset="100%" stopColor="#B8941F" />
+                </linearGradient>
+              </defs>
             </svg>
           </div>
         </span>

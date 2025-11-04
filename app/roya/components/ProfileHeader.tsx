@@ -10,7 +10,7 @@ interface Statistic {
 }
 
 const statistics: Statistic[] = [
-  { label: 'Followers', value: '25K' },
+  { label: 'Instagram Followers', value: '25K' },
   { label: 'Spotify Streams', value: '3.5M' },
   { label: 'YouTube Subscribers', value: '27K' },
   { label: 'YouTube Streams', value: '11.7M' },
@@ -32,13 +32,12 @@ export function ProfileHeader() {
             <a
               className="text-sm text-text-secondary hover:underline"
               href="https://instagram.com/theofficialroya"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               @theofficialroya
             </a>
-            <BadgeCheck
-              className="w-4 h-4 fill-blue-500 text-white"
-              strokeWidth={0}
-            />
+            <BadgeCheck className="w-4 h-4 fill-blue-500 text-black" />
           </div>
         </div>
 

@@ -12,7 +12,7 @@ export default function RoyaPage() {
         {/* Content */}
         <div className="relative z-10 w-full max-w-2xl mx-auto">
           {/* Profile Header - Instagram Style */}
-          <div className="mb-12">
+          <div className="mb-0">
             <ProfileHeader />
           </div>
 
